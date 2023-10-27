@@ -12,7 +12,7 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
     mother = mother_;
     capacity = 1;
     numChildren = 0;
-    children = new Person*[capacity](); // added () to initialize values to zero
+    children = new Person*[capacity]; 
 }
 
 Person::~Person(){
@@ -55,7 +55,7 @@ void Person::printLineage(char dir, int level){
         }
     }
 
-    delete[] temp;
+    delete[] temp; // compute_relation creates pointer and needs to deallocate
 }
 
 /* helper function to compute the lineage
